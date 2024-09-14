@@ -1,0 +1,31 @@
+1 Find the exployee with employee _id25
+Ans.db.querie.find({employee_id:25})
+2.Find the employees in Department2
+Ans.db.querie.find({department: "Department3"})
+3. List all employees witha salary greater than 55000
+Ans. db.querie.find({salary: {$gt:55000}})
+4. Count the number of employees in Department1
+Ans.db.querie.count({department:"Department1"})
+5. Increase the salary of the employee with exployee_id 50 to 5000
+Ans db.querie.updateOne({ employee_id: 50 }, { $set: { salary: 5000 } })
+6. Find all employees who joined after 2022-01-15
+Ans db.querie.find({date_joined: {$gt:"2022-01-15"}})
+7. Delete the employee with employee _id 10
+Ans db.querie.deleteOne({employee_id: 10})
+8. Find all employee whose last name starts with "L"
+Ans.db.querie.find({last_name: {$regex:/^L/}})
+9. Find all employees with no manager (manager _id is None)
+Ans. db.querie.find({manager_id: null})
+10. Find all employees who are older than 30
+Ans.  db.querie.find({age: {$gt: 30}})
+11. Update the Department of the employee with employee_id 75 to Department2
+Ans  db.querie.updateOne({employee_id:75}, {$set:{department:"Department2"}})
+12. Find all employee whose email contains 'firstname5'
+Ans  db.querie.find({email: {$regex:/firstname5/}})
+13. Find all employee who joined on or before 2022-01-10
+Ans  db.querie.find({date_joined:{$lt:"2022-01-10"}})
+14. Retrieve all employees sorted by salary in decending order.
+Ans db.querie.find().sort({salary:-1})
+15 Count the number of employee who are in Department4 and salary have a salary above 52000
+Ans db.querie.countDocuments({$and: [{department: "Department4"} , {salary:{$gt: 52000}}]})
+
